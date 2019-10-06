@@ -7,12 +7,14 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.placemark.R
+import org.wit.placemark.main.MainApp
 import org.wit.placemark.models.PlacemarkModel
 
 class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
 
     var placemark = PlacemarkModel()
-    val placemarks = ArrayList<PlacemarkModel>()
+    var app : MainApp? = null
+    //val placemarks = ArrayList<PlacemarkModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +27,8 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
 
             //val placemarkTitle = placemarkTitle.text.toString()
             if (placemark.title.isNotEmpty()) {
-                placemarks.add(placemark)
+                app!!("add Button Pressed: ${placemark}")
+                //placemarks.add(placemark)
                 //placemarks.add(placemark.copy())
                 info("add Button Pressed: ${placemark}")
                 for(i in placemarks.indices){
