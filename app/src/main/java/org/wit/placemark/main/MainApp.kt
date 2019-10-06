@@ -13,7 +13,11 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
     lateinit var app: MainApp
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate()
+        info("Placemark Started")
+        placemarks.add(PlacemarkModel("One", "About one..."))
+        placemarks.add(PlacemarkModel("Two", "About two..."))
+        placemarks.add(PlacemarkModel("Three", "About three..."))
         setContentView(R.layout.activity_placemark)
         app = application as MainApp
 
